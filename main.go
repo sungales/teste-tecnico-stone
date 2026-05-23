@@ -19,6 +19,9 @@ func (c *Carrinho) DividirConta(emails []string) map[string]int {
 	if len(emails) == 0 {
 		return result
 	}
+	if c.Items == nil {
+		return result
+	}
 
 	for _, item := range c.Items {
 		valorTotalDosItens += item.Preco * int(item.Quantidade)
